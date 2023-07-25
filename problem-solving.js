@@ -26,3 +26,22 @@ console.log(result);
 
 // Task 2 : Create a function that takes an array of numbers as input and returns the sum of all positive numbers in the array. 
 
+
+const sumPositiveNumber =  (num) => {
+
+    let sum =  0;
+
+    for (let i = 0; i < num.length; i++) {
+        const element = num[i];
+        if (element > 0) {
+            sum =  sum + element
+        }
+        
+    }
+
+    return sum;
+}
+
+const inputNum =  [2, -5, 10, -3, 7];
+const result =  sumPositiveNumber(inputNum);
+console.log(result);
