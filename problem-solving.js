@@ -50,7 +50,7 @@ console.log(result);
 // Task 3: Write a JavaScript program to find the most frequent element in an array and return it.
 
 
-const findMostFrequentElement =  (arr) => {
+/* const findMostFrequentElement =  (arr) => {
     const frequency = {};
     let maxFrequency = 0;
     let mostFrequentElement ;
@@ -70,4 +70,35 @@ const findMostFrequentElement =  (arr) => {
 
 const inputArray = [3, 5, 2, 5, 3, 3, 1, 4, 5, ];
 const mostFrequentElement = findMostFrequentElement(inputArray);
-console.log(mostFrequentElement);
+console.log(mostFrequentElement); */
+
+
+
+// Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
+
+const findTowNumber = (arr , target) => {
+
+    const n = arr.length;
+    const indices = {};
+  
+    for (let i = 0; i < n; i++) {
+      const complement = target - arr[i];
+      if (indices.hasOwnProperty(complement)) {
+        return [indices[complement], i];
+      }
+      indices[arr[i]] = i;
+    }
+  
+  
+    return [];
+}
+
+
+const inputArray = [1, 3, 6, 8, 11, 15];
+const targetValue = 9;
+const result = findTowNumber(inputArray, targetValue);
+console.log(result);
+
+
+
+
