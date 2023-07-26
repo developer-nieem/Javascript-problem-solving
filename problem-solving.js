@@ -76,7 +76,7 @@ console.log(mostFrequentElement); */
 
 // Task 4: Create a function that takes a sorted array of numbers and a target value as input. The function should find two numbers in the array that add up to the target value. Return an array containing the indices of the two numbers.
 
-const findTowNumber = (arr , target) => {
+/* const findTowNumber = (arr , target) => {
 
     const n = arr.length;
     const indices = {};
@@ -98,7 +98,34 @@ const inputArray = [1, 3, 6, 8, 11, 15];
 const targetValue = 9;
 const result = findTowNumber(inputArray, targetValue);
 console.log(result);
+ */
 
 
+// Task 5: Implement a simple JavaScript calculator. The calculator should take two numbers and an operator (+, -, *, /) as input and return the result of the operation.
 
 
+const calculator =  (num1 , operator , num2) => {
+
+    if (operator === '+') {
+        return num1 + num2
+    }
+    else if(operator === '-'){
+        return num1 - num2
+    }
+    else if(operator === '/'){
+        return num1 / num2
+    }
+    else if(operator === '*'){
+        return num1 * num2
+    }
+    else {
+        return "Error: Invalid operator";
+      }
+}
+
+
+const num1 = 10;
+const operator = '*';
+const num2 = 5;
+const result = calculator(num1, operator, num2);
+console.log(result);
