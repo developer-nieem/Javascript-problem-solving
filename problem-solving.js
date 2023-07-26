@@ -135,7 +135,7 @@ console.log(result); */
 // Task 6: Create a program that generates a random password of a specified length. The password should include a mix of uppercase letters, lowercase letters, numbers, and special characters.
 
 
-const generatesRandomPass =  (length) => {
+/* const generatesRandomPass =  (length) => {
     const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
   const numbers = "0123456789";
@@ -159,5 +159,40 @@ const generatesRandomPass =  (length) => {
 const passwordLength = 12;
 const randomPassword = generatesRandomPass(passwordLength);
 console.log(randomPassword);
+ */
 
 
+
+
+const romanToInt = (roman) =>  {
+    const romanNumerals = {
+      "I": 1,
+      "V": 5,
+      "X": 10,
+      "L": 50,
+      "C": 100,
+      "D": 500,
+      "M": 1000,
+    };
+  
+    let result = 0;
+  
+    for (let i = 0; i < roman.length; i++) {
+      const currentNumeral = romanNumerals[roman[i]];
+      const nextNumeral = romanNumerals[roman[i + 1]];
+  
+      if (nextNumeral > currentNumeral) {
+        result += nextNumeral - currentNumeral;
+        i++; 
+      } else {
+        result += currentNumeral;
+      }
+    }
+  
+    return result;
+  }
+  
+
+  const romanNumeral = "XXI";
+  const integerValue = romanToInt(romanNumeral);
+  console.log(integerValue);
